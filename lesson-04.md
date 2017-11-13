@@ -317,8 +317,7 @@ yang saya ganti dengan Nama itu adalah form pertama yang disediakan.
 
   ```
 
----
-#### 3. Embed Video From Local Video
+#### 4. Embed Video From Local Video
 
   * Isi file `index.html`:
 
@@ -338,6 +337,76 @@ yang saya ganti dengan Nama itu adalah form pertama yang disediakan.
     </body>
   </html>
 
+
+  ```
+
+#### 5. Embed Google Map
+  * Mendapat Api Key Google
+  1. Untuk menyisipkan website pada halaman web kita perlu membuat project di Google API Console.
+  2. Akses <a href="https://console.developers.google.com/flows/enableapi?apiid=maps_backend,geocoding_backend,directions_backend,distance_matrix_backend,elevation_backend,places_backend&reusekey=true">Google API Console</a>.
+  3. Buat atau pilih project.
+  4. Klik tombol <b>"Setuju dan Lanjutkan"</b>. Akan tampil, tampilan di bawah ini.
+  <img src="https://scontent-sin6-2.xx.fbcdn.net/v/t1.0-9/23472238_10211227187503562_2917962359015092834_n.jpg?oh=bf4611f4f582e20284905b495a85e2a9&oe=5A9421A4">
+  5. Pilih <b>"Google Maps JavaScript API"</b>, lalu tekan tombol <b>"Kredensial apa yang saya butuhkan?"</b>.
+  <img src="https://scontent-sin6-2.xx.fbcdn.net/v/t1.0-9/23517486_10211227200663891_2890477635700295732_n.jpg?oh=99c987468a87cf37197217ab28e0e6b8&oe=5A9414D0">
+  6. Copy kunci API yang ada seperti pada gambar di atas. Kemudian tekan tombol <b>"Selesai"</b>.
+  7. Selesai, kamu sudah memiliki kunci API untuk menggunakan Google Map.
+
+  Isi file `index.html`:
+
+  ```html
+
+  <html>
+    <head>
+      <style>
+         #map {
+          height: 400px;
+          width: 100%;
+         }
+      </style>
+    </head>
+    <body>
+      <h3>My Google Maps Demo</h3>
+      <div id="map"></div>
+      <script>
+        function initMap() {
+          var uluru = {lat: -25.363, lng: 131.044};
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 4,
+            center: uluru
+          });
+          var marker = new google.maps.Marker({
+            position: uluru,
+            map: map
+          });
+        }
+      </script>
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDl6xFyvdKRwq4xhKoHhN6ZabtgdbRiq6o&callback=initMap">
+      </script>
+    </body>
+  </html>
+
+
+  ```
+
+#### 6. Embed Audio
+
+  * Isi file `index.html`:
+
+  ```html
+
+  <html>
+    <head>
+        <title>
+          Embed Audio
+        </title>
+    </head>
+    <body>
+      <img src="images/happy-birthday.gif"><br>
+      <audio src="audio/happy-birthday.mp3" autoplay controls></audio>
+    </body>
+  </html>
 
   ```
 
